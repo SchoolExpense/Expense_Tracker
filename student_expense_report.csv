@@ -1,6 +1,5 @@
 ,Expense Category,Item/Service Purchased,Price,Date of Expense Purchase
-0,EDUCATION MATERIALS,textbook,500.0,N/A
-1,TRANSPORTATION,gas,100.0,N/A
-2,BILLS,Phone Bill,69.99,N/A
-3,ENTERTAINMENT/MISC,Movie,12.99,12/04/22
-4,FOOD,panda express,9.99,12/01/22
+0,EDUCATION MATERIALS,backpack,100.0,N/A
+1,EDUCATION MATERIALS,pencil,5.0,N/A
+2,HOUSING,rent,1000.0,N/A
+3,TRANSPORTATION,Gas,100.0,N/A

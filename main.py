@@ -1,6 +1,7 @@
 from matplotlib import pyplot as plt
 import numpy as np
 import pandas as pd
+import math
 
 
 
@@ -70,14 +71,41 @@ while(choice != 0):
         df.to_csv('student_expense_report.csv')
         print(df)
     elif(choice == 9):
+        '''def unique(category):
+            uni=[]
+            for x in category:
+                if x not in uni:
+                    uni.append(x)'''
+
+
+
+
 
         report = pd.read_csv("student_expense_report.csv") #reading csv
         category = report['Expense Category'].tolist() #parsing column to list
         expense = report['Price'].tolist() #parsing column to list
-
+        textstr = "hi"
         #plotting data
         fig = plt.figure(figsize=(10, 7))
-        plt.pie(expense, labels=category)
+        cat=[]
+        for x in category:
+            if x not in cat:
+                cat.append(x)
+        print(cat)
+
+        dfn = pd.DataFrame(category, columns=['category'])
+        dfn['sum'] = pd.DataFrame(expense)
+        dfn = dfn.groupby(['category']).sum()
+        sum=dfn['sum'].tolist()
+
+        total_sum=math.fsum(sum)
+
+
+
+        plt.pie(sum, labels=cat, autopct='%1.1f%%')
+
+
+
 
         plt.show()
 
