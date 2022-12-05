@@ -39,6 +39,7 @@ while(choice != 0):
     print("6) Enter an Expense Under BILLS")
     print("7) Enter an Expense Under ENTERTAINMENT/MISC") 
     print("8) Show and Save Expense Report")
+    print("9) Visualize Expense Report")
     print("0) EXIT")
     choice = int(input("Please Make Your Selection: "))
     if(choice == 0):
@@ -68,6 +69,18 @@ while(choice != 0):
         #save the report
         df.to_csv('student_expense_report.csv')
         print(df)
+    elif(choice == 9):
+
+        report = pd.read_csv("student_expense_report.csv") #reading csv
+        category = report['Type of Expense'].tolist() #parsing column to list
+        expense = report['Price'].tolist() #parsing column to list
+
+        #plotting data
+        fig = plt.figure(figsize=(10, 7))
+        plt.pie(expense, labels=category)
+
+        plt.show()
+
     else:
         print("INVALID SELECTION! PLEASE CHOOSE A VALID OPTION")        
     
@@ -83,15 +96,4 @@ print()
                 
 
 
-#category = input("what category?")
-# cat = ['Books', 'Pencils/Pens', 'Calculator','Food', 'Rent', 'Other']
-# cat.append(category)
 
-# expense = input("how much spent?")
-# data = [70.00, 17.00, 35.00, 29.00, 1000.00, 41.00]
-# data.append(expense)
-
-# fig = plt.figure(figsize =(10, 7))
-# plt.pie(data, labels = cat)
-
-# plt.show()
