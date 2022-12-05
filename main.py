@@ -118,7 +118,7 @@ while(choice != 0):
         dfn_sum = dfn.groupby(['category'], group_keys=True).sum()
         sum = dfn_sum['sum'].tolist()
 
-        dfn.groupby(['category']).sum().plot(kind='pie', y='sum', legend=False, ylabel="", autopct='%1.0f%%')
+        dfn.groupby(['category']).sum().plot(kind='pie', y='sum', legend=False, ylabel="", autopct='%1.1f%%')
         plt.show()
 
     else:
