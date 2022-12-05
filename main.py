@@ -25,6 +25,9 @@ def add_expense(category, item, price, date):
     dates.append(date)
     
 
+budget = float(input("Enter your Budget: "))
+
+
 #main begins below
 choice = -1  #user input
 
@@ -70,6 +73,35 @@ while(choice != 0):
         #save the report
         df.to_csv('student_expense_report.csv')
         print(df)
+        
+        #test the sums
+        sum_edu = df.loc[df['Expense Category'] == 'EDUCATION MATERIALS', 'Price'].sum()
+        sum_housing = df.loc[df['Expense Category'] == 'HOUSING', 'Price'].sum()
+        sum_trans = df.loc[df['Expense Category'] == 'TRANSPORTATION', 'Price'].sum()
+        sum_cloth = df.loc[df['Expense Category'] == 'CLOTHING', 'Price'].sum()
+        sum_food = df.loc[df['Expense Category'] == 'FOOD', 'Price'].sum()
+        sum_bills = df.loc[df['Expense Category'] == 'BILLS', 'Price'].sum()
+        sum_misc = df.loc[df['Expense Category'] == 'ENTERTAINMENT/MISC', 'Price'].sum()
+        total_sum = sum_edu + sum_housing + sum_trans + sum_cloth + sum_food + sum_bills + sum_misc
+        
+        print()
+        print('Expense Totals by Category')
+        print('-----------------------------------------------------------')
+        print('EDUCATION MATERIALS: $' + str("%.2f" % sum_edu))
+        print('HOUSING: $' + str("%.2f" % sum_housing))
+        print('TRANSPORTATION: $' + str("%.2f" % sum_trans))
+        print('CLOTHING: $' + str("%.2f" % sum_cloth))
+        print('FOOD: $' + str("%.2f" % sum_food))
+        print('BILLS: $' + str("%.2f" % sum_bills))
+        print('ENTERTAINMENT/MISC: $' + str("%.2f" % sum_misc))
+        print('-----------------------------------------------------------')
+        print('TOTAL SUM OF EXPENSES: $' + str("%.2f" % total_sum))  #.2f gives 2 decimal points format
+        
+        
+        result = budget - total_sum
+        
+        print('NET AMOUNT BASED ON BUDGET: $' + str("%.2f" % result))
+        
     elif(choice == 9):
         '''def unique(category):
             uni=[]
