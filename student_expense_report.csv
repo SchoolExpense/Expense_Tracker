@@ -1,4 +1,10 @@
 ,Expense Category,Item/Service Purchased,Price,Date of Expense Purchase
 0,EDUCATION MATERIALS,backpack,100.0,n/a
-1,TRANSPORTATION,gas,50.0,n/a
+1,EDUCATION MATERIALS,pencils,5.0,n/a
 2,HOUSING,rent,500.0,n/a
+3,TRANSPORTATION,gas,50.0,n/a
+4,CLOTHING,shirt,10.0,n/a
+5,FOOD,panda express,9.99,n/a
+6,FOOD,subway,10.99,n/a
+7,BILLS,phone bill,60.0,n/a
+8,ENTERTAINMENT/MISC,movie ticket,12.99,n/a

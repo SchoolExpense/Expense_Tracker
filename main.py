@@ -109,35 +109,16 @@ while(choice != 0):
                 if x not in uni:
                     uni.append(x)'''
 
-
-
-
-
-        report = pd.read_csv("student_expense_report.csv") #reading csv
-        category = report['Expense Category'].tolist() #parsing column to list
-        expense = report['Price'].tolist() #parsing column to list
-        #plotting data
-        fig = plt.figure(figsize=(10, 7))
-        cat=[]
-        for x in category:
-            if x not in cat:
-                cat.append(x)
-        print(cat)
+        report = pd.read_csv("student_expense_report.csv")  # reading csv
+        category = report['Expense Category'].tolist()  # parsing column to list
+        expense = report['Price'].tolist()  # parsing column to list
 
         dfn = pd.DataFrame(category, columns=['category'])
         dfn['sum'] = pd.DataFrame(expense)
-        dfn = dfn.groupby(['category']).sum()
-        sum=dfn['sum'].tolist()
+        dfn_sum = dfn.groupby(['category'], group_keys=True).sum()
+        sum = dfn_sum['sum'].tolist()
 
-        total_sum=math.fsum(sum)
-
-
-
-        plt.pie(sum, labels=cat, autopct='%1.1f%%')
-
-
-
-
+        dfn.groupby(['category']).sum().plot(kind='pie', y='sum', legend=False, ylabel="", autopct='%1.0f%%')
         plt.show()
 
     else:
