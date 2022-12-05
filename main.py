@@ -84,7 +84,6 @@ while(choice != 0):
         report = pd.read_csv("student_expense_report.csv") #reading csv
         category = report['Expense Category'].tolist() #parsing column to list
         expense = report['Price'].tolist() #parsing column to list
-        textstr = "hi"
         #plotting data
         fig = plt.figure(figsize=(10, 7))
         cat=[]
