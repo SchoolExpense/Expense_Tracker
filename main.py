@@ -61,7 +61,7 @@ while(choice != 0):
     elif(choice == 8):
         print("Saving...")
         df = pd.DataFrame()
-        df['TExpense Category'] = exp_categories
+        df['Expense Category'] = exp_categories
         df['Item/Service Purchased'] = items_purchased
         df['Price'] = prices
         df['Date of Expense Purchase'] = dates
@@ -72,7 +72,7 @@ while(choice != 0):
     elif(choice == 9):
 
         report = pd.read_csv("student_expense_report.csv") #reading csv
-        category = report['Type of Expense'].tolist() #parsing column to list
+        category = report['Expense Category'].tolist() #parsing column to list
         expense = report['Price'].tolist() #parsing column to list
 
         #plotting data

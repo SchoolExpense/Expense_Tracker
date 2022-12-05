@@ -1,3 +1,6 @@
-,Type of Expense,Item/Service Purchased,Price,Date of Expense Purchase
-0,EDUCATION MATERIALS,CS 4080 Textbook,500.0,N/A
-1,HOUSING,Rent December,1000.0,12/04/22
+,Expense Category,Item/Service Purchased,Price,Date of Expense Purchase
+0,EDUCATION MATERIALS,textbook,500.0,N/A
+1,TRANSPORTATION,gas,100.0,N/A
+2,BILLS,Phone Bill,69.99,N/A
+3,ENTERTAINMENT/MISC,Movie,12.99,12/04/22
+4,FOOD,panda express,9.99,12/01/22
