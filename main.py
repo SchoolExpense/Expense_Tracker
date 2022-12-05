@@ -60,7 +60,7 @@ while(choice != 0):
     elif(choice == 8):
         print("Saving...")
         df = pd.DataFrame()
-        df['Type of Expense'] = exp_categories
+        df['TExpense Category'] = exp_categories
         df['Item/Service Purchased'] = items_purchased
         df['Price'] = prices
         df['Date of Expense Purchase'] = dates
